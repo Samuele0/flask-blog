@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from flask import Blueprint, request, Response, abort, redirect, session
+from flask import Blueprint, request, Response, abort, redirect, session, url_for
 from ..database_model import User, db
 from random import getrandbits
 from hashlib import md5
@@ -28,7 +28,7 @@ def register():
 
     db.session.add(user)
     db.session.commit()
-    resp: Response = redirect("/")
+    resp: Response = redirect(url_for(login))
     resp.delete_cookie("csrf")
     return resp
 
