@@ -1,0 +1,51 @@
+body {}
+
+#page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#header {
+    display: flex;
+    margin: 0rem 5rem;
+    align-items: center;
+}
+
+#header .center {
+    flex: 1;
+}
+
+#desk-menu {
+    display: flex;
+    padding: 0.3rem 5rem;
+    background-color: rgb(0, 97, 255);
+    align-items: center;
+}
+
+#desk-menu .items {
+    flex: 1;
+    display: flex;
+}
+
+#desk-menu .items .item {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    margin: 0rem 1rem;
+}
+
+#desk-menu .items .item.active {
+    color: white;
+}
+
+#desk-menu .items .item:hover {
+    color: white;
+}
+
+#content {
+    margin-top: 2rem;
+}
+
+#content-wrapper {
+    display: flex;
+    justify-content: center;
+}

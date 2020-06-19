@@ -5,8 +5,10 @@
 
 from .app import app
 from .blueprints.sessionctrl import blue
+from .blueprints.mian import main
 
 
 def launch():
     app.register_blueprint(blue)
+    app.register_blueprint(main)
     app.run(debug=True)

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"> {% block styles %} {% endblock styles %}
+    <title>{% block title %} {% endblock title %}</title>
+    {% endblock head %}
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" width="50rem">
+            <div class="left">
+                <h1>Flask Blog</h1>
+            </div>
+            <div class="center"></div>
+            <div class="right">
+                {% if logged %} {% else %}
+                <a href="{{ url_for('sessionctrl.login') }}" class="button">Login</a>
+                <a href="{{ url_for('sessionctrl.register') }}" class="button">Register</a> {% endif %}
+            </div>
+
+        </div>
+        <div id="desk-menu">
+            <div class="items">
+                <a href="{{ url_for('main.home') }}" class=" item ">Home</a>
+                <a href="{{ url_for('main.home') }}" class=" item ">Category 1</a>
+                <a href="{{ url_for('main.home') }}" class=" item ">Category 2</a>
+            </div>
+            <form action="/Todo" method="GET">
+                <label><input type=" text " name=" query " placeholder="Search" /></label>
+            </form>
+        </div>
+        <div id="content-wrapper">
+            <div id="content">
+                {% block content %} {% endblock content %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

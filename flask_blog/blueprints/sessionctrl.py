@@ -43,7 +43,7 @@ def login():
         return abort(400, "CSRF Token mismatch")
     user = User.query.filter_by(username=username).first()
     if user is None:
-        return "Wrong User or password"
+        return "Wrong User or password",400
     found_password = user.password
     salt = user.salt
     salted_password = bytes(
