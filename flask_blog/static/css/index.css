@@ -19,6 +19,10 @@
 }
 
 .post .main .bottom {
+    flex: 1;
+}
+
+.post .main .author {
     color: rgb(100, 100, 100)
 }
 
@@ -29,6 +33,11 @@
 
 .page.current {
     background-color: rgb(0, 97, 255);
+}
+
+.post-image img {
+    width: 200px;
+    height: 200px;
 }
 
 

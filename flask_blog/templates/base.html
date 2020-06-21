@@ -20,7 +20,9 @@
             </div>
             <div class="center"></div>
             <div class="right">
-                {% if logged %} {% else %}
+                {% if logged %}
+                <a href="{{ url_for('main.new_post') }}" class="button success">New Post</a>
+                <a href="{{ url_for('sessionctrl.logout') }}" class="button error">Logout</a>{% else %}
                 <a href="{{ url_for('sessionctrl.login') }}" class="button">Login</a>
                 <a href="{{ url_for('sessionctrl.register') }}" class="button">Register</a> {% endif %}
             </div>
@@ -28,19 +30,23 @@
         </div>
         <div id="desk-menu">
             <div class="items">
-                <a href="{{ url_for('main.home') }}" class=" item ">Home</a>
-                <a href="{{ url_for('main.home') }}" class=" item ">Category 1</a>
-                <a href="{{ url_for('main.home') }}" class=" item ">Category 2</a>
+                <a href="{{ url_for('main.home') }}" class=" item {% if location == 'home'  %}
+                    active
+                {% endif %} ">Home</a>
+                <a href="{{ url_for('main.home') }}" class=" item ">About</a>
+                <a href="{{ url_for('main.home') }}" class=" item ">Getting Started</a>
             </div>
+
             <form action="/Todo" method="GET">
                 <label><input type=" text " name=" query " placeholder="Search" /></label>
             </form>
+
         </div>
-        <div id="content-wrapper">
-            <div id="content">
-                {% block content %} {% endblock content %}
-            </div>
+
+        <div id="content">
+            {% block content %} {% endblock content %}
         </div>
+
     </div>
 </body>
 

@@ -1,5 +1,3 @@
-body {}
-
 #page {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,6 +33,7 @@ body {}
 
 #desk-menu .items .item.active {
     color: white;
+    text-decoration: underline;
 }
 
 #desk-menu .items .item:hover {
@@ -42,10 +41,5 @@ body {}
 }
 
 #content {
-    margin-top: 2rem;
-}
-
-#content-wrapper {
-    display: flex;
-    justify-content: center;
+    margin: 2rem;
 }

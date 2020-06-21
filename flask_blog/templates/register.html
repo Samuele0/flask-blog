@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block title %} Register {% endblock title %} {% block content %}
+<form action="{{ url_for('sessionctrl.register') }}" method="post">
+    <h1>Register</h1>
+    <input type="hidden" name="csrf" value="{{csrf}}">
+    <label>
+        Username
+        <input type="text" name="username" id="username" />
+    </label>
+    <label>
+        Password
+        <input type="password" name="password" id="password" />
+    </label>
+    <input type="submit" value="Register">
+</form>
+{% endblock content %}

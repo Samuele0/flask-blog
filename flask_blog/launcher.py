@@ -5,7 +5,7 @@
 
 from .app import app
 from .blueprints.sessionctrl import blue
-from .blueprints.mian import main
+from .blueprints.main import main
 
 
 def launch():
